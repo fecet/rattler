@@ -1,31 +1,34 @@
 [package]
 name = "rattler_shell"
 version = "0.24.2"
-edition.workspace = true
+edition = "2021"
 authors = ["Wolf Vollprecht <w.vollprecht@gmail.com>"]
 description = "A crate to help with activation and deactivation of a conda environment"
-categories.workspace = true
-homepage.workspace = true
-repository.workspace = true
-license.workspace = true
-readme.workspace = true
+categories = ["development-tools"]
+homepage = "https://github.com/conda/rattler"
+repository = "https://github.com/conda/rattler"
+license = "BSD-3-Clause"
+readme = "README.md"
 
 [dependencies]
-anyhow = { workspace = true }
-enum_dispatch = { workspace = true }
-indexmap = { workspace = true }
-fs-err = { workspace = true }
-itertools = { workspace = true }
-rattler_conda_types = { workspace = true, default-features = false }
-rattler_pty = { workspace = true, default-features = false }
-serde_json = { workspace = true, features = ["preserve_order"] }
-shlex = { workspace = true }
-sysinfo = { workspace = true, optional = true }
-tempfile = { workspace = true }
-thiserror = { workspace = true }
-tracing = { workspace = true }
+anyhow = { version = "1.0.98" }
+enum_dispatch = { version = "0.3.13" }
+indexmap = { version = "2.9.0" }
+fs-err = { version = "3.1.0" }
+itertools = { version = "0.14.0" }
+rattler_conda_types = { version = "=0.35.4", default-features = false }
+rattler_pty = { version = "=0.2.4", default-features = false }
+serde_json = { version = "1.0.140", features = ["preserve_order"] }
+shlex = { version = "1.3.0" }
+sysinfo = { version = "0.35.1", optional = true }
+tempfile = { version = "3.20.0" }
+thiserror = { version = "2.0" }
+tracing = { version = "0.1.41" }
 
 [dev-dependencies]
-insta = { workspace = true, features = ["yaml"] }
-tempdir = { workspace = true }
-tokio = { workspace = true, features = ["rt-multi-thread", "macros"] }
+insta = { version = "1.43.1", features = ["yaml"] }
+tempdir = { version = "0.3.7" }
+tokio = { version = "1.45.1", default-features = false, features = [
+  "rt-multi-thread",
+  "macros",
+] }
